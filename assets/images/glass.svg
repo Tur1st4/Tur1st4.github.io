@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ccf2f4;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Retângulo_1" data-name="Retângulo 1" class="cls-1" d="M220.482,31.91l40.06,40.953h0L40.518,288.09h0L0.458,247.137h0L220.482,31.91h0Z"/>
+  <path id="Retângulo_1-2" data-name="Retângulo 1" class="cls-1" d="M128.425-41.81l32.467,33.19h0L-17.425,165.81h0l-32.467-33.191h0L128.425-41.81h0Z"/>
+  <path id="Retângulo_2" data-name="Retângulo 2" class="cls-1" d="M226.981-.348L236.726,9.7h0L-10.981,249.843h0l-9.745-10.052h0L226.981-.348h0Z"/>
+</svg>

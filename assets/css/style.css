@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "DS";
+    src: url(../fonts/DS-DIGI.TTF)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#pokedex-container {
+    background-color: #f05454;
+    background-image: url(../images/pokemon_pokecenter_icon-icons.com_67517.svg);
+    background-size: 170% 170%; 
+    width: 800px;
+    height: 600px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow:0 0 #222831;
+    transition: box-shadow .2s ease-in;
+}
+
+.btn {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    border: solid 5px #222831;
+    position: absolute;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    margin-top: 5px;
+    left: 25px;
+    top: 22px;
+    opacity: 0.7;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    margin-top: 5px;
+    padding-left: 5px;
+    left: 16px;
+    opacity: 0.7;
+}
+
+.btn:active {
+    box-shadow: inset 0 0 2px #222831;
+}
+
+#green {
+    top: 350px;
+    left: 70px;
+    background: #00f67f;
+}
+
+#red {
+    top: 480px;
+    left: 100px;
+    background: #ff3729
+}
+
+#pokedex-container:hover {
+    box-shadow: 5px 5px #222831;  
+}
+
+#search-container {
+    padding-bottom: 10px;
+}
+
+#search {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 0px #222831;
+    transition: all .1s ease-in;
+}
+
+#search:focus {
+    outline: none;
+    box-shadow: -5px 0px #222831;
+}
+
+.info {
+    font-family: DS;
+    font-size: 20px;
+    color: #28df99;
+    background: white;
+    border-radius: 15px;
+    position: relative;
+    float: left;
+    margin-left: 40px;
+}
+
+#artwork {
+    width: 200px;
+    height: 200px;
+    box-shadow: 10px 10px #222831;
+}
+
+#glass {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-size: 100% 100%;
+    background-color: #a4ebf3;
+}
+
+.light {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#light {
+    background-image: url(../images/glass.svg);
+}
+
+p {
+    width: 220px;
+    height: 370px;
+    overflow: auto;
+    word-wrap: break-word;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #30475e;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #28df99;
+    border-radius: 20px;
+}
+
+#info {
+    width: 240px;
+    height: 400px;
+    box-shadow: inset 0 10px #222831;
+    background: #30475e;
+}
+
+#light-info {
+    box-shadow: inset 0 10px #222831;
+    background-image: url(../images/glass-display.svg)
+}
