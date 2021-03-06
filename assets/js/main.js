@@ -19,7 +19,7 @@ function format_data(data) {
 
     return `Name: ${data["name"]}<br><br>ID: ${data["id"]}<br><br>Height: ${data["height"]}<br><br>
     Weight: ${data["weight"]}<br><br>Abilities: ${abilities}<br><br>Types: ${types}<br><br>
-    Encounters: ${encounters}`
+    Locations area: ${encounters}`
 }
 
 function reset(text) {
@@ -50,37 +50,40 @@ inputSearch.addEventListener("keyup", async function(event) {
             url: `https://pokeapi.co/api/v2/pokemon/${this.value}`,
             dataType: 'json',
         })
-        .always(function(res) {
+        .always(async function(res) {
             var types = loop(primary="types", second="type", list=res)
             var abilities = loop(primary="abilities", second="ability", data=res)
-            var encounters = []
-
+            
             $.ajax({
                 type: 'GET',
                 url: res["location_area_encounters"],
                 dataType: 'json',
             })
             .always(function(response) {
+                var encounters = []
                 response.forEach(item => {
-                    encounters.push(item["name"])
+                    encounters.push(item["location_area"]["name"])
                 })
-            })
-            pokemon_data = {
-                "name": res["name"],
-                "id": res["id"],
-                "height": res["height"],
-                "weight": res["weight"],
-                "types": types,
-                "abilities": abilities,
-                "encounters": encounters,
-                "artwork": res["sprites"]["other"]["official-artwork"]["front_default"]
-            }
-    
-            var text = format_data(data=pokemon_data)
-            var image = document.getElementById("glass")
+        
+                console.log(encounters)
 
-            text_info.innerHTML = text
-            image.style.backgroundImage = `url(${pokemon_data["artwork"]})`
+                pokemon_data = {
+                    "name": res["name"],
+                    "id": res["id"],
+                    "height": res["height"],
+                    "weight": res["weight"],
+                    "types": types,
+                    "abilities": abilities,
+                    "encounters":  encounters,
+                    "artwork": res["sprites"]["other"]["official-artwork"]["front_default"]
+                }
+        
+                var text = format_data(data=pokemon_data)
+                var image = document.getElementById("glass")
+    
+                text_info.innerHTML = text
+                image.style.backgroundImage = `url(${pokemon_data["artwork"]})`
+            })
         })
         .fail(function() {
             reset(text="Not found")
