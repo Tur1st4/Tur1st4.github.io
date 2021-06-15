@@ -47,7 +47,7 @@ inputSearch.addEventListener("keyup", async function(event) {
 
         $.ajax({
             type: 'GET',
-            url: `https://pokeapi.co/api/v2/pokemon/${this.value}`,
+            url: `https://pokeapi.co/api/v2/pokemon/${this.value.toLowerCase()}`,
             dataType: 'json',
         })
         .always(async function(res) {
